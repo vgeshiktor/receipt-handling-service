@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<checkstyle version="5.0">
+  <file name="cmd/main.go">
+    <error column="2" line="6" message="import &#39;github.com/vgeshiktor/receipt-handling-service/pkg/webserver&#39; is not allowed from list &#39;Main&#39;" severity="error" source="depguard"></error>
+    <error column="14" line="16" message="Error return value of `server.Start` is not checked" severity="error" source="errcheck"></error>
+    <error column="52" line="10" message="Magic number: 8080, in &lt;argument&gt; detected" severity="error" source="mnd"></error>
+    <error column="3" line="13" message="return with no blank line before" severity="error" source="nlreturn"></error>
+    <error column="1" line="18" message="block should not end with a whitespace (or comment)" severity="error" source="wsl"></error>
+  </file>
+  <file name="pkg/webserver/routes.go">
+    <error column="16" line="26" message="Error return value of `io.WriteString` is not checked" severity="error" source="errcheck"></error>
+    <error column="16" line="32" message="Error return value of `io.WriteString` is not checked" severity="error" source="errcheck"></error>
+    <error column="14" line="52" message="Magic number: 200, in &lt;assign&gt; detected" severity="error" source="mnd"></error>
+    <error column="3" line="73" message="return with no blank line before" severity="error" source="nlreturn"></error>
+    <error column="3" line="95" message="return with no blank line before" severity="error" source="nlreturn"></error>
+    <error column="2" line="39" message="var-naming: struct field ReceiptId should be ReceiptID" severity="warning" source="revive"></error>
+    <error column="2" line="39" message="ST1003: struct field ReceiptId should be ReceiptID" severity="error" source="stylecheck"></error>
+    <error column="19" line="39" message="json(camel): got &#39;receipt_id&#39; want &#39;receiptId&#39;" severity="error" source="tagliatelle"></error>
+    <error column="16" line="13" message="parameter name &#39;w&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+    <error column="17" line="64" message="parameter name &#39;w&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+    <error column="40" line="64" message="parameter name &#39;r&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+    <error column="20" line="86" message="parameter name &#39;w&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+    <error column="43" line="86" message="parameter name &#39;r&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+    <error column="43" line="108" message="parameter name &#39;r&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+  </file>
+  <file name="pkg/webserver/routes_test.go">
+    <error column="2" line="8" message="import &#39;github.com/stretchr/testify/require&#39; is not allowed from list &#39;Main&#39;" severity="error" source="depguard"></error>
+    <error column="14" line="91" message="string `{&#34;id&#34;:&#34;12345&#34;}` has 3 occurrences, make it a constant" severity="error" source="goconst"></error>
+    <error column="29" line="116" message="should rewrite http.NewRequestWithContext or add (*Request).WithContext" severity="error" source="noctx"></error>
+    <error column="1" line="11" message="Function TestHealthz missing the call to method parallel&#xA;" severity="error" source="paralleltest"></error>
+    <error column="1" line="33" message="Function TestReady missing the call to method parallel&#xA;" severity="error" source="paralleltest"></error>
+    <error column="1" line="56" message="Function TestCreateReceipt missing the call to method parallel&#xA;" severity="error" source="paralleltest"></error>
+    <error column="1" line="75" message="Function TestGetReceipt missing the call to method parallel&#xA;" severity="error" source="paralleltest"></error>
+    <error column="1" line="95" message="Function TestUpdateReceipt missing the call to method parallel&#xA;" severity="error" source="paralleltest"></error>
+    <error column="1" line="115" message="Function TestDeleteReceipt missing the call to method parallel&#xA;" severity="error" source="paralleltest"></error>
+    <error column="9" line="1" message="package should be `webserver_test` instead of `webserver`" severity="error" source="testpackage"></error>
+    <error column="30" line="12" message="&#34;GET&#34; can be replaced by http.MethodGet" severity="error" source="usestdlibvars"></error>
+    <error column="30" line="76" message="&#34;GET&#34; can be replaced by http.MethodGet" severity="error" source="usestdlibvars"></error>
+    <error column="30" line="96" message="&#34;PUT&#34; can be replaced by http.MethodPut" severity="error" source="usestdlibvars"></error>
+    <error column="30" line="116" message="&#34;DELETE&#34; can be replaced by http.MethodDelete" severity="error" source="usestdlibvars"></error>
+    <error column="2" line="17" message="variable name &#39;rr&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+    <error column="2" line="101" message="variable name &#39;rr&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+    <error column="2" line="121" message="variable name &#39;rr&#39; is too short for the scope of its usage" severity="error" source="varnamelen"></error>
+  </file>
+  <file name="pkg/webserver/server.go">
+    <error column="16" line="46" message="http.Server is missing fields DisableGeneralOptionsHandler, TLSConfig, ReadTimeout, ReadHeaderTimeout, WriteTimeout, IdleTimeout, MaxHeaderBytes, TLSNextProto, ConnState, ErrorLog, ConnContext" severity="error" source="exhaustruct"></error>
+    <error column="0" line="30" message="Function &#39;Start&#39; is too long (65 &gt; 60)" severity="error" source="funlen"></error>
+    <error column="16" line="46" message="G112: Potential Slowloris Attack because ReadHeaderTimeout is not configured in the http.Server" severity="medium" source="gosec"></error>
+    <error column="6" line="15" message="var-naming: type HttpServer should be HTTPServer" severity="warning" source="revive"></error>
+    <error column="10" line="50" message="context-keys-type: should not use basic type string as key in context.WithValue" severity="warning" source="revive"></error>
+    <error column="33" line="50" message="SA1029: should not use built-in type string as key for value; define your own type to avoid collisions" severity="error" source="staticcheck"></error>
+    <error column="6" line="15" message="ST1003: type HttpServer should be HTTPServer" severity="error" source="stylecheck"></error>
+    <error column="3" line="72" message="expressions should not be cuddled with blocks" severity="error" source="wsl"></error>
+  </file>
+</checkstyle>

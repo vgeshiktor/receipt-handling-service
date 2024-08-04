@@ -32,7 +32,7 @@ func ready(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "This is my website!\n")
 }
 
-// Define a struct to hold the response data
+// Define a struct to hold the response data.
 type Response struct {
 	Message   string `json:"message"`
 	Status    int    `json:"status"`
@@ -41,7 +41,7 @@ type Response struct {
 
 // Receipts
 // will receive a POST request with a JSON payload containing a receipt
-// will respond with a JSON payload containing the receipt ID
+// will respond with a JSON payload containing the receipt ID.
 func createReceipt(w http.ResponseWriter, r *http.Request) {
 	// log the request
 	fmt.Printf("Received request, method: %s uri %s \n", r.Method, r.RequestURI)

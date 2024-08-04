@@ -18,7 +18,7 @@ type HttpServer struct {
 	port int
 }
 
-// NewHTTPServer creates a new HTTP server
+// NewHTTPServer creates a new HTTP server.
 func NewHTTPServer(addr string, port int) (*HttpServer, error) {
 	return &HttpServer{
 		mux:  http.NewServeMux(),

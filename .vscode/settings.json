@@ -10,7 +10,8 @@
     "go.formatTool": "gofmt",
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
-        "--fast"
+        "--fast",
+        "--allow-parallel-runners"
     ],
     "go.toolsEnvVars": {
         "emeraldwalk.runonsave": {

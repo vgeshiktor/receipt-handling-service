@@ -30,6 +30,7 @@ func TestHealthz(t *testing.T) {
 			rr.Body.String(), expected)
 	}
 }
+
 func TestReady(t *testing.T) {
 	req, err := http.NewRequest(http.MethodGet, "/ready", nil)
 	if err != nil {
@@ -72,6 +73,7 @@ func TestCreateReceipt(t *testing.T) {
 	expected := `{"message":"Hello, World!","status":200,"receipt_id":"12345"}`
 	require.JSONEq(t, expected, rr.Body.String())
 }
+
 func TestGetReceipt(t *testing.T) {
 	req, err := http.NewRequest("GET", "/receipts/12345", nil)
 	if err != nil {

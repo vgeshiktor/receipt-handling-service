@@ -22,7 +22,7 @@ SHELL = /usr/bin/env bash -o pipefail
 .SHELLFLAGS = -ec
 
 .PHONY: all
-all: test build
+all: fmt vet lint test build
 
 ##@ General
 

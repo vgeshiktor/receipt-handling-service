@@ -1,7 +1,25 @@
 {
     "cSpell.words": [
         "healthz",
-        "vgeshiktor"
+        "stretchr",
+        "vgeshiktor",
+        "webserver"
     ],
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "editor.codeActionsOnSave": {},
+    "go.formatTool": "gofmt",
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.toolsEnvVars": {
+        "emeraldwalk.runonsave": {
+            "commands": [
+                {
+                    "match": ".*\\.go$",
+                    "cmd": "workbench.action.tasks.runTask golangci-lint"
+                }
+            ]
+        }
+    }
 }

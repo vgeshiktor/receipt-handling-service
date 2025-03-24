@@ -65,6 +65,10 @@ test: ## Run tests.
 build: fmt vet ## Build service binary.
 		$(GOBUILD) -o $(BINARY_FOLDER)/$(BINARY_NAME) $(MAIN_PACKAGE)
 
+.PHONY: build-race ## Build service binary with race detector
+build-race: fmt vet ## Build service binary
+	$(GOBUILD) -race -o $(BINARY_FOLDER)/$(BINARY_NAME) $(MAIN_PACKAGE) 
+
 .PHONY: clean
 clean: 
 		$(GOCLEAN)
